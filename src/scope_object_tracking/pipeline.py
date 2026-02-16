@@ -1,12 +1,8 @@
-# src/scope_object_tracking/pipeline.py
-from typing import TYPE_CHECKING
-import torch
+from scope.core.pipelines.base_schema import BasePipelineConfig
 from scope.core.pipelines.interface import Pipeline, Requirements
+import torch
 
-if TYPE_CHECKING:
-    from scope.core.pipelines.base_schema import BasePipelineConfig
-
-class ObjectTrackingConfig:
+class ObjectTrackingConfig(BasePipelineConfig):
     # If you already have a Pydantic config pattern, keep it.
     # I’m keeping this minimal; the key is the Pipeline interface usage.
     pipeline_id = "object-tracking"
